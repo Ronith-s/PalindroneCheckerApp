@@ -18,7 +18,7 @@ public class PalindromeCheckerApp {
         if (count == palindrome.length()) {
             is_palindrome = true;
         }
-        System.out.println("Is it a Palindrome? : "+is_palindrome);
-
+        System.out.println("Is it a Palindrome? : " + is_palindrome);
+        System.out.println("Why am i gay");
     }
 }
