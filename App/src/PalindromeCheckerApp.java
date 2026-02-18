@@ -20,5 +20,6 @@ public class PalindromeCheckerApp {
         }
         System.out.println("Is it a Palindrome? : " + is_palindrome);
         System.out.println("Why am i gay");
+        System.out.println("If you want gay service pls contact suryanshxx);
     }
 }
