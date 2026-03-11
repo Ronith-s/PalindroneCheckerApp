@@ -1,15 +1,26 @@
 import java.util.Scanner;
 
-public class UseCase9PalindromeCheckerApp {
+public class PalindromeCheckerApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter a string: ");
         String input = scanner.nextLine();
 
-        String cleanedInput = input.replaceAll("\\s+", "").toLowerCase();
+        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
-        boolean result = isPalindromeRecursive(cleanedInput, 0, cleanedInput.length() - 1);
+        boolean result = true;
+        int start = 0;
+        int end = normalized.length() - 1;
+
+        while (start < end) {
+            if (normalized.charAt(start) != normalized.charAt(end)) {
+                result = false;
+                break;
+            }
+            start++;
+            end--;
+        }
 
         System.out.println("Input: " + input);
         if (result) {
@@ -19,17 +30,5 @@ public class UseCase9PalindromeCheckerApp {
         }
 
         scanner.close();
-    }
-
-    public static boolean isPalindromeRecursive(String str, int start, int end) {
-        if (start >= end) {
-            return true;
-        }
-
-        if (str.charAt(start) != str.charAt(end)) {
-            return false;
-        }
-
-        return isPalindromeRecursive(str, start + 1, end - 1);
     }
 }
