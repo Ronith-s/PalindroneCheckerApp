@@ -1,6 +1,5 @@
-import java.util.Scanner;
+class PalindromeCheckerApp {
 
-class PalindromeChecker {
     public boolean checkPalindrome(String text) {
         if (text == null || text.isEmpty()) {
             return false;
@@ -17,24 +16,16 @@ class PalindromeChecker {
             start++;
             end--;
         }
+
         return true;
     }
-}
 
-public class UseCase11PalindromeCheckerApp {
+    // Optional main method for testing
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        PalindromeCheckerApp app = new PalindromeCheckerApp();
 
-        PalindromeChecker checker = new PalindromeChecker();
-
-        System.out.print("Enter a string: ");
-        String input = scanner.nextLine();
-
-        boolean isPalindrome = checker.checkPalindrome(input);
-
-        System.out.println("Input: " + input);
-        System.out.println("Is Palindrome? : "+isPalindrome);
-
-        scanner.close();
+        System.out.println(app.checkPalindrome("Madam"));               // true
+        System.out.println(app.checkPalindrome("A man, a plan, a canal: Panama")); // true
+        System.out.println(app.checkPalindrome("hello"));               // false
     }
 }
